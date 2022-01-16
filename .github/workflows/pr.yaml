@@ -21,8 +21,6 @@ jobs:
 
   build:
     needs: validate
-    # Run only on PR merge (close)
-    if: github.event.pull_request.merged == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -46,7 +44,6 @@ jobs:
       - name: Build image and push to Docker Hub and GitHub Container Registry
         uses: docker/build-push-action@v2
         with:
-          # build on feature branches, push only on main branch
           push: false
 
       - name: Image digest
