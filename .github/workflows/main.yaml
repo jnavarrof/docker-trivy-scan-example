@@ -37,8 +37,8 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           tags: |
-            ghcr.io/$GITHUB_REPOSITORY:${{ steps.vars.outputs.sha_short }}
-            ghcr.io/$GITHUB_REPOSITORY:latest
+            ghcr.io/${{ github.repository }}:${{ steps.vars.outputs.sha_short }}
+            ghcr.io/${{ github.repository }}:latest
           # build on feature branches, push only on main branch
           push: ${{ github.ref == 'refs/heads/main' }}
 
