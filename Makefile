@@ -28,7 +28,7 @@ test: ## Test image using Trivy
 	@echo "* Testing image ..."
 	trivy -q --auto-refresh $(APP):$(VERSION) | tee vuln-report.log
 	@# Fail if HIGH vulnerabilities detected >0
-	@if [ "$$(grep -c 'HIGH: [0-1]' vuln-report.log)" -gt 0 ]; then \
+	@if [ "$$(grep -c 'HIGH: [1-9]' vuln-report.log)" -gt 0 ]; then \
 			echo "ERROR! Critical vulnerabilities detected in $(APP):$(VERSION)"; \
 			exit 1; \
     fi
