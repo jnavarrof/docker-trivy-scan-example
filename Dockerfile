@@ -1,2 +1,2 @@
-# This image have critical vulnerabilities
-FROM ruby:2.4.0
+# This image might have critical vulnerabilities
+FROM php:8.0.5-fpm-alpine

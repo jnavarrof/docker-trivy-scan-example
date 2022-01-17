@@ -83,9 +83,8 @@ jobs:
           image-ref: 'ghcr.io/${{ github.repository }}:latest'
           # exit code when vulnerabilities were found. Notice
           # exit-code: 1 is recommended to avoid HIGH, CRITICAL
-          # vulnerabilities. Skipping only for demo purposes.
-          exit-code: 0
-          # uncomment this for prod containers exit-code: 1
+          # vulnerabilities. Skip only for demo purposes.
+          exit-code: 1
           # severities of vulnerabilities to be displayed
           severity: 'HIGH,CRITICAL'
           # template and results
